@@ -4,10 +4,12 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cvComponente"
     android:layout_width="match_parent"
-    android:layout_height="225dp"
-    android:layout_marginBottom="@dimen/D_margen_top"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/D_margen_top"
+    android:layout_margin="@dimen/D_margen"
     card_view:cardCornerRadius="@dimen/D_corner_radius_cardview"
     android:layout_gravity="center_horizontal"
+    card_view:cardBackgroundColor="@color/colorBackgroundCardView"
     >
 
 
@@ -25,13 +27,16 @@
             android:layout_height="wrap_content"
             android:text="@string/default_nombre_cardview"
             android:textSize="@dimen/D_nombre_cardview"
+            android:textStyle="bold"
+            android:padding="@dimen/D_padding_cardview"
             />
 
         <ImageView
             android:id="@+id/ivImagenCV"
             android:layout_width="wrap_content"
-            android:layout_height="130dp"
+            android:layout_height="110dp"
             android:src="@drawable/componentedefault"
+            android:padding="@dimen/D_padding_cardview"
             />
         <TextView
             android:id="@+id/tvEstadoCV"
@@ -39,6 +44,7 @@
             android:layout_height="wrap_content"
             android:text="@string/default_estado_cardview"
             android:textSize="@dimen/D_estado_cardview"
+            android:padding="@dimen/D_padding_cardview"
             />
 
 

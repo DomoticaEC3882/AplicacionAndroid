@@ -3,6 +3,7 @@ package usb.ve.domapp.database;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -15,25 +16,46 @@ public class ConstructorComponentes {
         this.context = context;
     }
 
-    public ArrayList<Componente> obtenerDatos(){
+    public ArrayList<Componente> obtenerDatos(String seleccion){
         BaseDatos baseDatos = new BaseDatos(context);
-        insertarComponentes(baseDatos);
-        return baseDatos.obtenerTodosLosComponentes();
+        insertarComponentes(baseDatos,seleccion);
+        return baseDatos.obtenerTodosLosComponentes(seleccion);
     }
 
-    public void insertarComponentes(BaseDatos baseDatos){
+    public void insertarComponentes(BaseDatos baseDatos, String seleccion){
         ContentValues contentValues = new ContentValues();
-        contentValues.put(ConstantesBaseDatos.TABLA_COMPONENTES_NOMBRE,"Temperatura");
-        contentValues.put(ConstantesBaseDatos.TABLA_COMPONENTES_IMAGEN, R.drawable.temperaturadefault);
-        contentValues.put(ConstantesBaseDatos.TABLA_COMPONENTES_ESTADO,"27°");
+        switch (seleccion){
+            case ConstantesBaseDatos.BASEDATOS_NOMBRE_SUPERVISION:
+                contentValues.put(ConstantesBaseDatos.TABLA_COMPONENTES_NOMBRE,"Temperatura");
+                contentValues.put(ConstantesBaseDatos.TABLA_COMPONENTES_IMAGEN, R.drawable.temperaturadefault);
+                contentValues.put(ConstantesBaseDatos.TABLA_COMPONENTES_ESTADO,"27°");
 
-        baseDatos.insertarComponente(contentValues);
+                baseDatos.insertarComponente(contentValues,seleccion);
 
-        contentValues.put(ConstantesBaseDatos.TABLA_COMPONENTES_NOMBRE,"Seguridad");
-        contentValues.put(ConstantesBaseDatos.TABLA_COMPONENTES_IMAGEN, R.drawable.seguridaddefault);
-        contentValues.put(ConstantesBaseDatos.TABLA_COMPONENTES_ESTADO,"Activada");
+                contentValues.put(ConstantesBaseDatos.TABLA_COMPONENTES_NOMBRE,"Seguridad");
+                contentValues.put(ConstantesBaseDatos.TABLA_COMPONENTES_IMAGEN, R.drawable.seguridaddefault);
+                contentValues.put(ConstantesBaseDatos.TABLA_COMPONENTES_ESTADO,"Activada");
 
-        baseDatos.insertarComponente(contentValues);
+                baseDatos.insertarComponente(contentValues,seleccion);
+                break;
+            case ConstantesBaseDatos.BASEDATOS_NOMBRE_CONTROL:
+                contentValues.put(ConstantesBaseDatos.TABLA_COMPONENTES_NOMBRE,"Iluminación");
+                contentValues.put(ConstantesBaseDatos.TABLA_COMPONENTES_IMAGEN, R.drawable.temperaturadefault);
+                contentValues.put(ConstantesBaseDatos.TABLA_COMPONENTES_ESTADO,"Encendida");
+
+                baseDatos.insertarComponente(contentValues,seleccion);
+
+                contentValues.put(ConstantesBaseDatos.TABLA_COMPONENTES_NOMBRE,"Ventilación");
+                contentValues.put(ConstantesBaseDatos.TABLA_COMPONENTES_IMAGEN, R.drawable.seguridaddefault);
+                contentValues.put(ConstantesBaseDatos.TABLA_COMPONENTES_ESTADO,"Encendida");
+
+                baseDatos.insertarComponente(contentValues,seleccion);
+                break;
+            default:
+                Toast.makeText(context, "Error en la base de datos", Toast.LENGTH_SHORT).show();
+                break;
+        }
+
     }
 
 }

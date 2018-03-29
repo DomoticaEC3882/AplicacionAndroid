@@ -5,13 +5,17 @@ package usb.ve.domapp.database;
  */
 
 public class ConstantesBaseDatos {
-    public static final String  BASEDATOS_NOMBRE    = "DomApp";
-    public static final int     BASEDATOS_VERSION = 1;
+    public static final String  BASEDATOS_NOMBRE               = "DomApp";
+    public static final String  BASEDATOS_NOMBRE_SUPERVISION   = "supervision";
+    public static final String  BASEDATOS_NOMBRE_CONTROL       = "control";
+    public static final int     BASEDATOS_VERSION   = 1;
+
+
 
     //Identificadores
-    public static final String TABLA_COMPONENTES        = "componente";
-    public static final String TABLA_COMPONENTES_ID     = "id";
-    public static final String TABLA_COMPONENTES_NOMBRE = "nombre";
-    public static final String TABLA_COMPONENTES_IMAGEN = "imagen";
-    public static final String TABLA_COMPONENTES_ESTADO = "estado";
+    public static final String  TABLA_COMPONENTES        = "componente";
+    public static final String  TABLA_COMPONENTES_ID     = "id";
+    public static final String  TABLA_COMPONENTES_NOMBRE = "nombre";
+    public static final String  TABLA_COMPONENTES_IMAGEN = "imagen";
+    public static final String  TABLA_COMPONENTES_ESTADO = "estado";
 }

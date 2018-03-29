@@ -23,7 +23,7 @@
             android:id="@+id/tablayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabBackground="@color/colorTabLayout">
+            android:layout_gravity="center">
 
         </android.support.design.widget.TabLayout>
     </android.support.design.widget.AppBarLayout>

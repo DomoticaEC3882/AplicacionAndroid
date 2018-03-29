@@ -11,7 +11,7 @@ import android.support.v7.widget.Toolbar;
 import java.util.ArrayList;
 
 import usb.ve.domapp.adaptador.PaginaAdaptador;
-import usb.ve.domapp.vista.fragment.ActuadoresFragment;
+import usb.ve.domapp.vista.fragment.ControlFragment;
 import usb.ve.domapp.vista.fragment.SupervisionFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<Fragment> fragments = new ArrayList<>();
 
         fragments.add(new SupervisionFragment());
-        fragments.add(new ActuadoresFragment());
+        fragments.add(new ControlFragment());
 
         return fragments;
     }
@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     private void setUpViewPager() {
         viewPager.setAdapter(new PaginaAdaptador(getSupportFragmentManager(), agregarFragments()));
         tabLayout.setupWithViewPager(viewPager);
+        tabLayout.getTextAlignment();
 
         tabLayout.getTabAt(0).setIcon(R.drawable.supervisionicono);
         tabLayout.getTabAt(1).setIcon(R.drawable.controlicono);

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#238796</color>
-    <color name="colorPrimaryDark">#092229</color>
-    <color name="colorAccent">#0119f5</color>
-    <color name="colorTabLayout">#eaeaea</color>
+    <color name="colorPrimary">#21707c</color>
+    <color name="colorPrimaryDark">#195161</color>
+    <color name="colorAccent">#3be0fa</color>
+    <color name="colorBackground">#0d3a3d</color>
+    <color name="colorBackgroundCardView">#195161</color>
+    <color name="colorTextPrimary">#cacaca</color>
+    <color name="colorTextSecondary">#ffffff</color>
 </resources>

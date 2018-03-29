@@ -7,16 +7,20 @@ import java.util.ArrayList;
 import usb.ve.domapp.database.ConstantesBaseDatos;
 import usb.ve.domapp.database.ConstructorComponentes;
 import usb.ve.domapp.objetoComponente.Componente;
-import usb.ve.domapp.vista.fragment.ISupervisionFragment;
+import usb.ve.domapp.vista.fragment.IControlFragment;
 
-public class SupervisionFragmentPresentador implements ISupervisionFragmentPresentador{
-    private ISupervisionFragment iSupervisionFragment;
+/**
+ * Created by Diego on 29/3/2018.
+ */
+
+public class ControlFragmentPresentador implements IControlFragmentPresentador{
+    private IControlFragment iControlFragment;
     private Context context;
     private ConstructorComponentes constructorComponentes;
     private ArrayList<Componente> componentes;
 
-    public SupervisionFragmentPresentador(ISupervisionFragment iSupervisionFragment, Context context) {
-        this.iSupervisionFragment = iSupervisionFragment;
+    public ControlFragmentPresentador(IControlFragment iControlFragment, Context context) {
+        this.iControlFragment = iControlFragment;
         this.context = context;
         obtenerComponentesBaseDatos();
     }
@@ -24,13 +28,13 @@ public class SupervisionFragmentPresentador implements ISupervisionFragmentPrese
     @Override
     public void obtenerComponentesBaseDatos() {
         constructorComponentes = new ConstructorComponentes(context);
-        componentes = constructorComponentes.obtenerDatos(ConstantesBaseDatos.BASEDATOS_NOMBRE_SUPERVISION);
+        componentes = constructorComponentes.obtenerDatos(ConstantesBaseDatos.BASEDATOS_NOMBRE_CONTROL);
         mostrarComponentesRV();
     }
 
     @Override
     public void mostrarComponentesRV() {
-        iSupervisionFragment.inicializarAdaptadorRV(iSupervisionFragment.crearAdaptador(componentes));
-        iSupervisionFragment.generarGridLayout();
+        iControlFragment.inicializarAdaptadorRV(iControlFragment.crearAdaptador(componentes));
+        iControlFragment.generarGridLayout();
     }
 }
