@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DomApp</string>
+
+    <!--cardview grid componente -->
+    <string name="default_nombre_cardview">NOMBRE</string>
+    <string name="default_estado_cardview">ESTADO</string>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--cardview_grid_componente-->
+    <dimen name="D_padding_cardview">6dp</dimen>
+    <dimen name="D_margen_top">10dp</dimen>
+    <dimen name="D_corner_radius_cardview">5dp</dimen>
+    <dimen name="D_nombre_cardview">20sp</dimen>
+    <dimen name="D_estado_cardview">20sp</dimen>
+    <!--wrap cardview_grid_componente-->
+
+</resources>
