@@ -3,6 +3,7 @@ package usb.ve.domapp.database;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -18,7 +19,9 @@ public class ConstructorComponentes {
 
     public ArrayList<Componente> obtenerDatos(String seleccion){
         BaseDatos baseDatos = new BaseDatos(context);
-        insertarComponentes(baseDatos,seleccion);
+        if (baseDatos.obtenerTodosLosComponentes(seleccion).isEmpty()) {
+            insertarComponentes(baseDatos,seleccion);
+        }
         return baseDatos.obtenerTodosLosComponentes(seleccion);
     }
 

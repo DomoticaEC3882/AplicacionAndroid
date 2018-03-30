@@ -1,6 +1,7 @@
 package usb.ve.domapp.presentador;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 
 import java.util.ArrayList;
 
