@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 import usb.ve.domapp.R;
 import usb.ve.domapp.adaptador.ComponenteAdaptador;
+import usb.ve.domapp.database.ConstantesBaseDatos;
 import usb.ve.domapp.objetoComponente.Componente;
 import usb.ve.domapp.presentador.ISupervisionFragmentPresentador;
 import usb.ve.domapp.presentador.SupervisionFragmentPresentador;
@@ -39,7 +40,7 @@ public class SupervisionFragment extends Fragment implements ISupervisionFragmen
 
     @Override
     public ComponenteAdaptador crearAdaptador(ArrayList<Componente> componentes) {
-        return new ComponenteAdaptador(componentes, getActivity());
+        return new ComponenteAdaptador(componentes, getActivity(), ConstantesBaseDatos.SECCION_SUPERVISION);
     }
 
     @Override

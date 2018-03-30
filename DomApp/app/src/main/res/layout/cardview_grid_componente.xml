@@ -5,12 +5,14 @@
     android:id="@+id/cvComponente"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="@dimen/D_margen_top"
     android:layout_margin="@dimen/D_margen"
+    android:layout_marginTop="@dimen/D_margen"
     card_view:cardCornerRadius="@dimen/D_corner_radius_cardview"
     android:layout_gravity="center_horizontal"
-    card_view:cardBackgroundColor="@color/colorBackgroundCardView"
-    >
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:stateListAnimator="@animator/downontouch"
+    card_view:cardBackgroundColor="@color/colorBackgroundCardView">
 
 
     <LinearLayout

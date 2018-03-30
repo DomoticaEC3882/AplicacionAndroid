@@ -41,6 +41,10 @@ public class BaseDatos extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+        sqLiteDatabase.execSQL("DROP TABLE IF EXIST " + ConstantesBaseDatos.BASEDATOS_NOMBRE_SUPERVISION);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXIST " + ConstantesBaseDatos.BASEDATOS_NOMBRE_CONTROL);
+        onCreate(sqLiteDatabase);
+
     }
 
     public ArrayList<Componente> obtenerTodosLosComponentes(String seleccion){

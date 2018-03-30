@@ -4,4 +4,12 @@
     <!--cardview grid componente -->
     <string name="default_nombre_cardview">NOMBRE</string>
     <string name="default_estado_cardview">ESTADO</string>
+    <string name="encendida">Encendida</string>
+    <string name="apagada">Apagada</string>
+
+    <!--Strings para el tablayout-->
+    <string name="hogar">HOGAR</string>
+    <string name="control">CONTROL</string>
+
+
 </resources>

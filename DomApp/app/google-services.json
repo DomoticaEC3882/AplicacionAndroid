@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "827860290985",
+    "firebase_url": "https://domoticaec3882.firebaseio.com",
+    "project_id": "domoticaec3882",
+    "storage_bucket": "domoticaec3882.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:827860290985:android:5563e1d86c86bfe0",
+        "android_client_info": {
+          "package_name": "usb.ve.domapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "827860290985-4j5e7qfngsnes80m437cfb9b4rnuuh6r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "usb.ve.domapp",
+            "certificate_hash": "4510ff4b8f481471e9195dfef16494e5aa7a7711"
+          }
+        },
+        {
+          "client_id": "827860290985-cr4cpohgcq0jsaun7r9k3rded1oqs6dr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxl5jQP4Y-rIR6_CGgAz2LeGPuZjT4vKk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "827860290985-cr4cpohgcq0jsaun7r9k3rded1oqs6dr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

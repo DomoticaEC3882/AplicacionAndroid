@@ -18,4 +18,8 @@ public class ConstantesBaseDatos {
     public static final String  TABLA_COMPONENTES_NOMBRE = "nombre";
     public static final String  TABLA_COMPONENTES_IMAGEN = "imagen";
     public static final String  TABLA_COMPONENTES_ESTADO = "estado";
+
+    //selector
+    public static final int     SECCION_SUPERVISION      = 0;
+    public static final int     SECCION_CONTROL          = 1;
 }

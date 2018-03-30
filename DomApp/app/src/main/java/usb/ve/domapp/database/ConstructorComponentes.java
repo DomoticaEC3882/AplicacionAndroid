@@ -43,14 +43,14 @@ public class ConstructorComponentes {
                 break;
             case ConstantesBaseDatos.BASEDATOS_NOMBRE_CONTROL:
                 contentValues.put(ConstantesBaseDatos.TABLA_COMPONENTES_NOMBRE,"Iluminación");
-                contentValues.put(ConstantesBaseDatos.TABLA_COMPONENTES_IMAGEN, R.drawable.temperaturadefault);
-                contentValues.put(ConstantesBaseDatos.TABLA_COMPONENTES_ESTADO,"Encendida");
+                contentValues.put(ConstantesBaseDatos.TABLA_COMPONENTES_IMAGEN, R.drawable.bombilloapagado);
+                contentValues.put(ConstantesBaseDatos.TABLA_COMPONENTES_ESTADO,"Apagada");
 
                 baseDatos.insertarComponente(contentValues,seleccion);
 
                 contentValues.put(ConstantesBaseDatos.TABLA_COMPONENTES_NOMBRE,"Ventilación");
-                contentValues.put(ConstantesBaseDatos.TABLA_COMPONENTES_IMAGEN, R.drawable.seguridaddefault);
-                contentValues.put(ConstantesBaseDatos.TABLA_COMPONENTES_ESTADO,"Encendida");
+                contentValues.put(ConstantesBaseDatos.TABLA_COMPONENTES_IMAGEN, R.drawable.ventiladorapagado);
+                contentValues.put(ConstantesBaseDatos.TABLA_COMPONENTES_ESTADO,"Apagada");
 
                 baseDatos.insertarComponente(contentValues,seleccion);
                 break;

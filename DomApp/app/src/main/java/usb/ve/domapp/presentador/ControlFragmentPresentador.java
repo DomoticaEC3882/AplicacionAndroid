@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 
 import java.util.ArrayList;
 
+import usb.ve.domapp.adaptador.ComponenteAdaptador;
 import usb.ve.domapp.database.ConstantesBaseDatos;
 import usb.ve.domapp.database.ConstructorComponentes;
 import usb.ve.domapp.objetoComponente.Componente;
@@ -18,7 +19,8 @@ public class ControlFragmentPresentador implements IControlFragmentPresentador{
     private IControlFragment iControlFragment;
     private Context context;
     private ConstructorComponentes constructorComponentes;
-    private ArrayList<Componente> componentes;
+    public static ArrayList<Componente> componentes;
+    private ComponenteAdaptador componenteAdaptador;
 
     public ControlFragmentPresentador(IControlFragment iControlFragment, Context context) {
         this.iControlFragment = iControlFragment;
@@ -33,9 +35,12 @@ public class ControlFragmentPresentador implements IControlFragmentPresentador{
         mostrarComponentesRV();
     }
 
+
+
     @Override
     public void mostrarComponentesRV() {
-        iControlFragment.inicializarAdaptadorRV(iControlFragment.crearAdaptador(componentes));
+        componenteAdaptador = iControlFragment.crearAdaptador(componentes);
+        iControlFragment.inicializarAdaptadorRV(componenteAdaptador);
         iControlFragment.generarGridLayout();
     }
 }

@@ -12,4 +12,5 @@ public interface ISupervisionFragment {
     public ComponenteAdaptador crearAdaptador(ArrayList<Componente> componentes);
 
     public void inicializarAdaptadorRV(ComponenteAdaptador adaptador);
+
 }
