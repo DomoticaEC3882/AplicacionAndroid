@@ -25,6 +25,7 @@ public class ControlFragment extends Fragment implements IControlFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater layoutInflater, @Nullable ViewGroup contenedor, @Nullable Bundle savedInstanceState) {
+
         View view = layoutInflater.inflate(R.layout.fragment_control,contenedor,false);
 
         rvControlComponentes = (RecyclerView) view.findViewById(R.id.rvControlComponentes);
@@ -44,6 +45,8 @@ public class ControlFragment extends Fragment implements IControlFragment {
 
     @Override
     public void inicializarAdaptadorRV(ComponenteAdaptador componenteAdaptador) {
+
         rvControlComponentes.setAdapter(componenteAdaptador);
     }
+
 }

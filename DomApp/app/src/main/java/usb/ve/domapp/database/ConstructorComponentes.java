@@ -3,20 +3,26 @@ package usb.ve.domapp.database;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.widget.Toast;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
 import usb.ve.domapp.R;
+import usb.ve.domapp.firebase.ConstantesFirebase;
 import usb.ve.domapp.objetoComponente.Componente;
 
 public class ConstructorComponentes {
     private Context context;
+    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+    public DatabaseReference temperaturaRef = firebaseDatabase.getReference(ConstantesFirebase.FIREBASE_TEMPERATURA);
+
+
     public ConstructorComponentes(Context context) {
         this.context = context;
     }
-
     public ArrayList<Componente> obtenerDatos(String seleccion){
         BaseDatos baseDatos = new BaseDatos(context);
         if (baseDatos.obtenerTodosLosComponentes(seleccion).isEmpty()) {
@@ -27,6 +33,7 @@ public class ConstructorComponentes {
 
     public void insertarComponentes(BaseDatos baseDatos, String seleccion){
         ContentValues contentValues = new ContentValues();
+
         switch (seleccion){
             case ConstantesBaseDatos.BASEDATOS_NOMBRE_SUPERVISION:
                 contentValues.put(ConstantesBaseDatos.TABLA_COMPONENTES_NOMBRE,"Temperatura");

@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
         if (toolbar != null) {
             setSupportActionBar(toolbar);
         }
-        leerFirebase();
     }
 
 
@@ -86,20 +85,6 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.getTabAt(1).setIcon(R.drawable.ic_tune).setText(R.string.control);
     }
 
-    public void leerFirebase() {
-        temperaturaRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                valorTemperatura = dataSnapshot.getValue(Integer.class);
-                Log.i(TAG, String.valueOf(valorTemperatura));
 
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-    }
 
 }

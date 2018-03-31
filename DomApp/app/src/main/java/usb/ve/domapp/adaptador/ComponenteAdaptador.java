@@ -12,6 +12,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -19,13 +24,16 @@ import java.util.ArrayList;
 import usb.ve.domapp.R;
 import usb.ve.domapp.database.ConstantesBaseDatos;
 import usb.ve.domapp.firebase.ComunicacionFirebase;
+import usb.ve.domapp.firebase.ConstantesFirebase;
 import usb.ve.domapp.objetoComponente.Componente;
 
 public class ComponenteAdaptador extends RecyclerView.Adapter<ComponenteAdaptador.ComponenteViewHolder> {
     ArrayList<Componente> componentes;
     Activity activity;
     int seccion;
-
+    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+    private DatabaseReference temperaturaRef = firebaseDatabase.getReference(ConstantesFirebase.FIREBASE_TEMPERATURA);
+    private DatabaseReference seguridadRef = firebaseDatabase.getReference(ConstantesFirebase.FIREBASE_SEGURIDAD);
 
 
     public ComponenteAdaptador(ArrayList<Componente> componentes, Activity activity, int seccion){
@@ -49,12 +57,28 @@ public class ComponenteAdaptador extends RecyclerView.Adapter<ComponenteAdaptado
             @Override
             public void onClick(View view) {
                 EjecutarAccion(componenteViewHolder,position,seccion);
-
             }
         });
         componenteViewHolder.tvNombreCV.setText(String.valueOf(componente.getNombre()));
         componenteViewHolder.ivImagenCV.setImageResource(componente.getImagen());
         componenteViewHolder.tvEstadoCV.setText(String.valueOf(componente.getEstado()));
+        if (position==0){
+            temperaturaRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    componenteViewHolder.tvEstadoCV.setText(dataSnapshot.getValue().toString());
+
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+        }
+
+
+
 
     }
 
@@ -83,10 +107,11 @@ public class ComponenteAdaptador extends RecyclerView.Adapter<ComponenteAdaptado
         if(seccion == ConstantesBaseDatos.SECCION_SUPERVISION){
             switch (position ){
                 case 0:
-                    Toast.makeText(activity, "Temperatura", Toast.LENGTH_SHORT).show();
+                    //do nothing
                     break;
                 case 1:
-                    Toast.makeText(activity, "Seguridad", Toast.LENGTH_SHORT).show();
+                    componenteViewHolder.tvEstadoCV.setText(R.string.desactivada);
+                    seguridadRef.setValue(0);
                     break;
                 default:
                     break;
@@ -106,6 +131,5 @@ public class ComponenteAdaptador extends RecyclerView.Adapter<ComponenteAdaptado
                     break;
             }
         }
-
     }
 }

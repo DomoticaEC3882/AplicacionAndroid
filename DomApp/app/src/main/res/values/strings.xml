@@ -6,6 +6,7 @@
     <string name="default_estado_cardview">ESTADO</string>
     <string name="encendida">Encendida</string>
     <string name="apagada">Apagada</string>
+    <string name="desactivada">Desactivada</string>
 
     <!--Strings para el tablayout-->
     <string name="hogar">HOGAR</string>
