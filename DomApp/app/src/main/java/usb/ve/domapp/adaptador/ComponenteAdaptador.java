@@ -2,7 +2,6 @@ package usb.ve.domapp.adaptador;
 
 
 import android.app.Activity;
-import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,13 +11,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 import usb.ve.domapp.R;
 import usb.ve.domapp.database.ConstantesBaseDatos;
-import usb.ve.domapp.firebase.ComunicacionFirebase;
 import usb.ve.domapp.objetoComponente.Componente;
 
 public class ComponenteAdaptador extends RecyclerView.Adapter<ComponenteAdaptador.ComponenteViewHolder> {
@@ -108,4 +105,7 @@ public class ComponenteAdaptador extends RecyclerView.Adapter<ComponenteAdaptado
         }
 
     }
+
+
+
 }

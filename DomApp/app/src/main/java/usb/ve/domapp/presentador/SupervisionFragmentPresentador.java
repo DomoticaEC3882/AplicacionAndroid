@@ -1,10 +1,10 @@
 package usb.ve.domapp.presentador;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 
 import java.util.ArrayList;
 
+import usb.ve.domapp.adaptador.ComponenteAdaptador;
 import usb.ve.domapp.database.ConstantesBaseDatos;
 import usb.ve.domapp.database.ConstructorComponentes;
 import usb.ve.domapp.objetoComponente.Componente;
@@ -15,6 +15,9 @@ public class SupervisionFragmentPresentador implements ISupervisionFragmentPrese
     private Context context;
     private ConstructorComponentes constructorComponentes;
     private ArrayList<Componente> componentes;
+
+    private ComponenteAdaptador componenteAdaptador;
+
 
 
     public SupervisionFragmentPresentador(ISupervisionFragment iSupervisionFragment, Context context) {

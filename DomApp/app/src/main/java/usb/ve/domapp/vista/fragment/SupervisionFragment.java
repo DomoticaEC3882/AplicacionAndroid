@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
+import usb.ve.domapp.GuardarRecycler;
 import usb.ve.domapp.R;
 import usb.ve.domapp.adaptador.ComponenteAdaptador;
 import usb.ve.domapp.database.ConstantesBaseDatos;
@@ -22,7 +23,6 @@ public class SupervisionFragment extends Fragment implements ISupervisionFragmen
 
     private RecyclerView rvSupervisionComponentes;
     private ISupervisionFragmentPresentador presentador;
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater layoutInflater, @Nullable ViewGroup contenedor, @Nullable Bundle savedInstanceState) {
@@ -30,6 +30,7 @@ public class SupervisionFragment extends Fragment implements ISupervisionFragmen
 
         rvSupervisionComponentes = (RecyclerView) view.findViewById(R.id.rvSupervisionComponentes);
         presentador = new SupervisionFragmentPresentador(this, getContext());
+
         return view;
     }
 
@@ -47,4 +48,5 @@ public class SupervisionFragment extends Fragment implements ISupervisionFragmen
     public void inicializarAdaptadorRV(ComponenteAdaptador componenteAdaptador) {
         rvSupervisionComponentes.setAdapter(componenteAdaptador);
     }
+
 }

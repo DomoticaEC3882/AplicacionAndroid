@@ -19,7 +19,7 @@ public class ControlFragmentPresentador implements IControlFragmentPresentador{
     private IControlFragment iControlFragment;
     private Context context;
     private ConstructorComponentes constructorComponentes;
-    public static ArrayList<Componente> componentes;
+    private ArrayList<Componente> componentes;
     private ComponenteAdaptador componenteAdaptador;
 
     public ControlFragmentPresentador(IControlFragment iControlFragment, Context context) {

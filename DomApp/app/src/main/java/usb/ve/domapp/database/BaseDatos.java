@@ -69,7 +69,12 @@ public class BaseDatos extends SQLiteOpenHelper {
 
     public void insertarComponente(ContentValues contentValues,String seleccion){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+
         sqLiteDatabase.insert(seleccion,null, contentValues);
+    }
+    public void remplazarComponente(ContentValues contentValues,String seleccion){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        sqLiteDatabase.replace(seleccion,null,contentValues);
     }
 
 }
