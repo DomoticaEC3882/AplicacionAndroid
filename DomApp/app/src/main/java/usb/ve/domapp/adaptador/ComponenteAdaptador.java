@@ -2,45 +2,37 @@ package usb.ve.domapp.adaptador;
 
 
 import android.app.Activity;
-import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.squareup.picasso.Picasso;
-
-import java.util.ArrayList;
 
 import usb.ve.domapp.R;
-import usb.ve.domapp.database.ConstantesBaseDatos;
-import usb.ve.domapp.firebase.ComunicacionFirebase;
-import usb.ve.domapp.firebase.ConstantesFirebase;
-import usb.ve.domapp.objetoComponente.Componente;
+import usb.ve.domapp.constantes.Constantes;
 
 public class ComponenteAdaptador extends RecyclerView.Adapter<ComponenteAdaptador.ComponenteViewHolder> {
     Activity activity;
     int seccion;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-    private DatabaseReference temperaturaRef = firebaseDatabase.getReference(ConstantesFirebase.FIREBASE_TEMPERATURA);
-    private DatabaseReference seguridadRef = firebaseDatabase.getReference(ConstantesFirebase.FIREBASE_SEGURIDAD);
-    private DatabaseReference iluminacionRef = firebaseDatabase.getReference(ConstantesFirebase.FIREBASE_ILUMINACION);
-    private DatabaseReference ventilacionRef = firebaseDatabase.getReference(ConstantesFirebase.FIREBASE_VENTILACION);
+    private DatabaseReference temperaturaRef = firebaseDatabase.getReference(Constantes.FIREBASE_TEMPERATURA);
+    private DatabaseReference seguridadRef = firebaseDatabase.getReference(Constantes.FIREBASE_SEGURIDAD);
+    private DatabaseReference iluminacionRef = firebaseDatabase.getReference(Constantes.FIREBASE_ILUMINACION);
+    private DatabaseReference ventilacionRef = firebaseDatabase.getReference(Constantes.FIREBASE_VENTILACION);
 
     private String valorTemperatura;
     private int valorSeguridad;
     private int valorIluminacion;
     private int valorVentilacion;
+    private View v;
     public ComponenteAdaptador(Activity activity, int seccion){
         this.activity       = activity;
         this.seccion        = seccion;
@@ -48,8 +40,14 @@ public class ComponenteAdaptador extends RecyclerView.Adapter<ComponenteAdaptado
     // Infla el layout y lo pasa al viewholder para que obtenga los views
     @Override
     public ComponenteViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_grid_componente, parent, false);
-        return new ComponenteViewHolder(v);
+        if(seccion == Constantes.SECCION_SUPERVISION){
+            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_supervision, parent, false);
+            return new ComponenteViewHolder(v);
+        }
+        else {
+            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_control, parent, false);
+            return new ComponenteViewHolder(v);
+        }
     }
 
     //asocia cada Componente con cada card_view

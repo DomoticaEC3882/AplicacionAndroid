@@ -9,12 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.ArrayList;
-
 import usb.ve.domapp.R;
 import usb.ve.domapp.adaptador.ComponenteAdaptador;
-import usb.ve.domapp.database.ConstantesBaseDatos;
-import usb.ve.domapp.objetoComponente.Componente;
+import usb.ve.domapp.constantes.Constantes;
 import usb.ve.domapp.presentador.ControlFragmentPresentador;
 import usb.ve.domapp.presentador.IControlFragmentPresentador;
 
@@ -40,7 +37,7 @@ public class ControlFragment extends Fragment implements IControlFragment {
 
     @Override
     public ComponenteAdaptador crearAdaptador() {
-        return new ComponenteAdaptador(getActivity(), ConstantesBaseDatos.SECCION_CONTROL);
+        return new ComponenteAdaptador(getActivity(), Constantes.SECCION_CONTROL);
     }
 
     @Override
