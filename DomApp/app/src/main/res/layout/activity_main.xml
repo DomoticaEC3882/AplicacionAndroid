@@ -28,7 +28,7 @@
             app:tabMaxWidth="0dp"
             app:tabGravity="fill"
             app:tabMode="fixed"
-            app:tabSelectedTextColor="@color/colorTextSecondary">
+            app:tabSelectedTextColor="@color/colorTextPrimary">
 
         </android.support.design.widget.TabLayout>
     </android.support.design.widget.AppBarLayout>

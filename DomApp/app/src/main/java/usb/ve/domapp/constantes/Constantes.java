@@ -1,5 +1,7 @@
 package usb.ve.domapp.constantes;
 
+import android.graphics.Color;
+
 /**
  * Created by Diego on 31/3/2018.
  */
@@ -18,4 +20,7 @@ public class Constantes {
     public static final String  FIREBASE_ALARMA         = "Alarma";
     public static final String  FIREBASE_VENTILACION    = "Ventilacion";
     public static final String  FIREBASE_SISMO          = "Sismo";
+
+    public static final int     COLOR_SEGURIDAD_ACTIVAR     = Color.rgb(5,100,5);
+    public static final int     COLOR_SEGURIDAD_DESACTIVAR  = Color.rgb(100,5,5);
 }

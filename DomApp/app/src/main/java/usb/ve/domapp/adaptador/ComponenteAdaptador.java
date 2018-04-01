@@ -1,6 +1,5 @@
 package usb.ve.domapp.adaptador;
 
-
 import android.app.Activity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -32,7 +31,6 @@ public class ComponenteAdaptador extends RecyclerView.Adapter<ComponenteAdaptado
     private int valorSeguridad;
     private int valorIluminacion;
     private int valorVentilacion;
-    private View v;
     public ComponenteAdaptador(Activity activity, int seccion){
         this.activity       = activity;
         this.seccion        = seccion;
@@ -110,9 +108,8 @@ public class ComponenteAdaptador extends RecyclerView.Adapter<ComponenteAdaptado
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 valorTemperatura= dataSnapshot.getValue().toString();
-                componenteViewHolder.tvEstadoCV.setText(valorTemperatura);
+                componenteViewHolder.tvEstadoCV.setText(valorTemperatura+"º");
             }
-
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
@@ -130,9 +127,13 @@ public class ComponenteAdaptador extends RecyclerView.Adapter<ComponenteAdaptado
                 valorSeguridad = dataSnapshot.getValue(Integer.class);
                 if(valorSeguridad == 0){
                     componenteViewHolder.tvEstadoCV.setText(R.string.desactivada);
+                    componenteViewHolder.ivImagenCV.setImageResource(R.drawable.seguridaddesactivada);
+                    componenteViewHolder.cvComponente.setCardBackgroundColor(Constantes.COLOR_SEGURIDAD_DESACTIVAR);
                 }
                 else{
                     componenteViewHolder.tvEstadoCV.setText(R.string.activada);
+                    componenteViewHolder.ivImagenCV.setImageResource(R.drawable.seguridadactivada);
+                    componenteViewHolder.cvComponente.setCardBackgroundColor(Constantes.COLOR_SEGURIDAD_ACTIVAR);
                 }
             }
             @Override

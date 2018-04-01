@@ -6,6 +6,7 @@
     <dimen name="D_corner_radius_cardview">20dp</dimen>
     <dimen name="D_nombre_cardview">30dp</dimen>
     <dimen name="D_estado_cardview">20dp</dimen>
+    <dimen name="D_altura_cardview">110dp</dimen>
     <!--wrap cardview_grid_componente-->
 
 </resources>

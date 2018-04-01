@@ -5,6 +5,7 @@
     <color name="colorAccent">#3be0fa</color>
     <color name="colorBackground">#0d3a3d</color>
     <color name="colorBackgroundCardView">#195161</color>
-    <color name="colorTextPrimary">#cacaca</color>
-    <color name="colorTextSecondary">#ffffff</color>
+    <color name="colorTextPrimary">#ffffff</color>
+    <color name="colorTextSecondary">#6e6e6e</color>
+
 </resources>
