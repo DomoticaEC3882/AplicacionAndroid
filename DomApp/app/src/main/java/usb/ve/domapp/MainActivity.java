@@ -7,27 +7,10 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.widget.Toast;
-
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-
-import usb.ve.domapp.adaptador.ComponenteAdaptador;
 import usb.ve.domapp.adaptador.PaginaAdaptador;
-import usb.ve.domapp.firebase.ComunicacionFirebase;
-import usb.ve.domapp.firebase.ConstantesFirebase;
-import usb.ve.domapp.objetoComponente.Componente;
-import usb.ve.domapp.presentador.ControlFragmentPresentador;
-import usb.ve.domapp.presentador.ISupervisionFragmentPresentador;
-import usb.ve.domapp.presentador.SupervisionFragmentPresentador;
 import usb.ve.domapp.vista.fragment.ControlFragment;
-import usb.ve.domapp.vista.fragment.ISupervisionFragment;
 import usb.ve.domapp.vista.fragment.SupervisionFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -35,14 +18,6 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
-    //Firebase
-    private ComunicacionFirebase comunicacionFirebase;
-    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-    public DatabaseReference temperaturaRef = firebaseDatabase.getReference(ConstantesFirebase.FIREBASE_TEMPERATURA);
-    public int valorTemperatura;
-
-    private static final String TAG = "VALOR: ";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

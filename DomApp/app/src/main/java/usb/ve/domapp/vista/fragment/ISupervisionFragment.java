@@ -9,7 +9,7 @@ import usb.ve.domapp.objetoComponente.Componente;
 public interface ISupervisionFragment {
     public void generarGridLayout();
 
-    public ComponenteAdaptador crearAdaptador(ArrayList<Componente> componentes);
+    public ComponenteAdaptador crearAdaptador();
 
     public void inicializarAdaptadorRV(ComponenteAdaptador adaptador);
 

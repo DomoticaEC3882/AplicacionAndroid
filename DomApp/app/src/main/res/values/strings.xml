@@ -7,6 +7,14 @@
     <string name="encendida">Encendida</string>
     <string name="apagada">Apagada</string>
     <string name="desactivada">Desactivada</string>
+    <string name="activada">activada</string>
+    <string name="actualizando">Actualizando</string>
+
+    <!--NOMBRE DE CADA TARJETA CARDVIEW-->
+    <string name="temperatura">Temperatura</string>
+    <string name="seguridad">Seguridad</string>
+    <string name="iluminacion">Iluminación</string>
+    <string name="ventilacion">Ventilación</string>
 
     <!--Strings para el tablayout-->
     <string name="hogar">HOGAR</string>

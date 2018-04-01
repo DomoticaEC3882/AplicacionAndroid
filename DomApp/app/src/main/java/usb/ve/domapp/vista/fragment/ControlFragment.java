@@ -39,8 +39,8 @@ public class ControlFragment extends Fragment implements IControlFragment {
     }
 
     @Override
-    public ComponenteAdaptador crearAdaptador(ArrayList<Componente> componentes) {
-        return new ComponenteAdaptador(componentes, getActivity(), ConstantesBaseDatos.SECCION_CONTROL);
+    public ComponenteAdaptador crearAdaptador() {
+        return new ComponenteAdaptador(getActivity(), ConstantesBaseDatos.SECCION_CONTROL);
     }
 
     @Override

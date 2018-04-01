@@ -39,8 +39,8 @@ public class SupervisionFragment extends Fragment implements ISupervisionFragmen
     }
 
     @Override
-    public ComponenteAdaptador crearAdaptador(ArrayList<Componente> componentes) {
-        return new ComponenteAdaptador(componentes, getActivity(), ConstantesBaseDatos.SECCION_SUPERVISION);
+    public ComponenteAdaptador crearAdaptador() {
+        return new ComponenteAdaptador(getActivity(), ConstantesBaseDatos.SECCION_SUPERVISION);
     }
 
     @Override

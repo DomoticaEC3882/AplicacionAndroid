@@ -8,7 +8,5 @@ import usb.ve.domapp.database.ConstructorComponentes;
  */
 
 public interface IControlFragmentPresentador {
-    public void obtenerComponentesBaseDatos();
-
-    public void mostrarComponentesRV();
+    void mostrarComponentesRV();
 }
