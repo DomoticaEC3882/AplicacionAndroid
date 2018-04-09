@@ -7,9 +7,15 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.util.ArrayList;
 import usb.ve.domapp.adaptador.PaginaAdaptador;
+import usb.ve.domapp.constantes.Constantes;
 import usb.ve.domapp.vista.fragment.ControlFragment;
 import usb.ve.domapp.vista.fragment.SupervisionFragment;
 
@@ -18,9 +24,16 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    //Se obtiene el token actualizado
+    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+    private DatabaseReference registrationTokenRef = firebaseDatabase.getReference(Constantes.FIREBASE_TOKEN);
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+        registrationTokenRef.setValue(refreshedToken);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
